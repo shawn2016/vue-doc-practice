@@ -11,8 +11,8 @@ new Vue({
      <p v-show="isActive">v-text会替换的元素之间的文本{{text}}</p>
      <p v-text="text">hhh:<li>22</li>{{text}}</p>
      <p v-if="isActive">{{text}}</p>
-     <p  else-if="isActive">{{text}}</p>
-     <p  else="isActive">{{text}}</p>
+     <p  v-else-if="isActive">{{text}}</p>
+     <p  v-else="isActive">{{text}}</p>
      <p  v-html="html"></p>
      <p><input type="text" v-model="text"/></p>
      <p>转成numberv-model.number="text"<input type="text" v-model.number="text"/></p>

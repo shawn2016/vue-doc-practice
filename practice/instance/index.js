@@ -58,6 +58,10 @@ setInterval(() => {
 // 方法
 const unwatch = app.$watch('text', (newVal, oldValue) => {
     console.log(newVal, oldValue)
+    
+},{
+    immediate: true
+    // 立即以 `text` 的当前值触发回调
 })
 
 setTimeout(() => {
