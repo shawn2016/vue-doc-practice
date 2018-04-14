@@ -11,6 +11,12 @@ Vue.use(Vuex)
 Vue.use(Router)
 const router = createRouter()
 const store = createStore()
+// 动态注册模块
+store.registerModule('c', {
+  state: {
+    text: 3
+  }
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

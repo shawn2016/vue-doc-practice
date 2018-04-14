@@ -4,6 +4,10 @@
     <h2>{{count}}</h2>
     <h2>{{desc}}</h2>
     <h2>{{fullName}}</h2>
+    <h2>{{textA}}</h2>
+    <h2>{{textPlus}}</h2>
+    
+    
   </div>
 </template>
 
@@ -34,20 +38,39 @@ export default {
       desc: "你好,这是新的我",
       time: 5000
     });
+    this.updateAtext({
+      num: 1
+    });
+    this["b/updateBtext"]({
+      num: 1
+    });
+    this.add({
+      num:11
+    })
+     this["b/add"]({
+      num:11
+    })
   },
   computed: {
     // count() {
     //   return this.$store.state.count;
     // },
-    ...mapState(["count", "desc"]),
+    ...mapState({
+      count: state => state.count,
+      desc: state => state.desc,
+      textA: state => state.a.text
+    }),
     // fullName() {
     //   return this.$store.getters.fullName;
     // }
-    ...mapGetters(["fullName"])
+    ...mapGetters(["fullName", "textPlus"])
+    // textA() {
+    //   return this.$store.state.a.text;
+    // }
   },
   methods: {
-    ...mapActions(["updateAsyncCount"]),
-    ...mapMutations(["updateCount"])
+    ...mapActions(["updateAsyncCount","add","b/add","b/add2"]),
+    ...mapMutations(["updateCount", "updateAtext", "b/updateBtext"])
   }
 };
 </script>
