@@ -12,7 +12,14 @@ export default () => {
         mutations,
         getters,
         actions,
-        modules
+        modules,
+        plugins: [(store) => {
+            // store.subscribe((mutation, state) => {
+            //   console.log('mutation类型：', mutation.type) // 类型
+            //   console.log('mutation参数：', mutation.payload) // 参数
+            // })
+            console.log('插件操作')
+        }]
     })
     if (module.hot) {
         module.hot.accept([
