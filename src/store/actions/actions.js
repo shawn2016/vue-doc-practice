@@ -7,7 +7,7 @@ export default {
     updateAsyncCount(store, { desc, time }) {
         setTimeout(() => {
             store.commit('updateAsyncDesc', {
-                desc
+                desc    
             })
         }, time);
     }
