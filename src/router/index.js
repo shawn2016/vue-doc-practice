@@ -1,5 +1,9 @@
 
 import HelloWorld from '@/components/HelloWorld'
+import HelloWorld2 from '@/components/HelloWorld2'
+import nextTick from '@/components/nextTick'
+
+
 import VueRouter from 'vue-router'
 
 export default () => {
@@ -10,7 +14,28 @@ export default () => {
         name: 'HelloWorld',
         component: HelloWorld,
         meta: {
-          title: 'demo'
+          title: 'demo',
+          keepAlive: true // 需要被缓存
+        },
+        children: []
+      },
+      {
+        path: '/',
+        name: 'HelloWorld',
+        component: HelloWorld,
+        meta: {
+          title: 'demo',
+          keepAlive: true // 需要被缓存
+        },
+        children: []
+      },
+      {
+        path: '/nextTick',
+        name: 'nextTick',
+        component: nextTick,
+        meta: {
+          title: 'demo',
+          keepAlive: false // 不需要被缓存
         },
         children: []
       }

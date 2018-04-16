@@ -9,24 +9,19 @@
     <div>
       <input type="text" />
     </div>
-
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 export default {
-  name: "HelloWorld",
+  name: "HelloWorld2",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: "Welcome to Your Vue.js App",
+      demo:'22222222'
     };
   },
-  // beforeRouteLeave(to, from, next) {
-  //   // 设置下一个路由的 meta
-  //   to.meta.keepAlive = true; // B 跳转到 A 时，让 A 缓存，即不刷新
-  //   next();
-  // },
   mounted() {
     let i = 1;
     setInterval(() => {

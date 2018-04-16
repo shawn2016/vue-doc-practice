@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-link to="/">首页</router-link>
+    <router-link to="/HelloWorld2">首页2</router-link>
+    <router-link to="/nextTick">nextTick</router-link>
+    
+    <keep-alive>
+    <router-view v-if="$route.meta.keepAlive"/>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
+
   </div>
 </template>
 
